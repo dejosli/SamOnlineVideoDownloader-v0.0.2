@@ -1,7 +1,7 @@
 from cx_Freeze import setup, Executable
 import os
 
-path = os.path.abspath("./sameonlineVideoDownloader.py")
+path = os.path.abspath("./samonlineVideoDownloader.py")
 
 executables = [Executable(path)]
 
