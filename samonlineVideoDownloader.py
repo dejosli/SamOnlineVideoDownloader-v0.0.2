@@ -32,6 +32,7 @@ def download_all_videos(video_links, video_names, complete_file_path):
         print("%s Downloaded!" % video_name)
 
     print("All videos has been downloaded successfully!")
+    open_download_folder(complete_file_path)
 
 
 def download_selected_videos(video_links, video_names, complete_file_path):
@@ -41,6 +42,12 @@ def download_selected_videos(video_links, video_names, complete_file_path):
         print("%s Downloaded!" % video_name)
 
     print("All videos has been downloaded successfully!")
+    open_download_folder(complete_file_path)
+
+
+def open_download_folder(complete_file_path):
+    open_folder = os.path.realpath(complete_file_path)
+    os.startfile(open_folder)
 
 
 save_path = os.path.join(os.path.expanduser('~'), 'Downloads')
@@ -83,7 +90,7 @@ else:
     pathlib.Path(complete_file_path).mkdir(parents=True, exist_ok=True)
 
     total_video = len(video_links)
-    choice = str(input('Download all '+str(total_video) +
+    choice = str(input('\nDownload all '+str(total_video) +
                        ' videos type for Yes=\'y\'; No=\'n\':: '))
 
     selected_video_links = []
